@@ -1,16 +1,20 @@
-/* const imgs = document.querySelectorAll("img");
+const tabMenu = document.querySelectorAll('.js-tabmenu li');
+const tabContent = document.querySelectorAll('.js-tabcontent section');
 
-imgs.forEach(function (item, index, array) {
-  console.log(item); // o item atual no loop
-  console.log(index); // o número do index
-  console.log(array); // a Array completa
-});
- */
+if (tabMenu.length && tabContent.length) {
 
-const imgs = document.querySelectorAll("img");
+  tabContent[0].classList.add('ativo')
 
-imgs.forEach((item, index, array) => {
-  console.log(item); // o item atual no loop
-  console.log(index); // o número do index
-  console.log(array); // a Array completa
-});
+  function activeTab(index) {
+    tabContent.forEach((section) => {
+      section.classList.remove('ativo')
+    })
+    tabContent[index].classList.add('ativo')
+  }
+
+  tabMenu.forEach((itemMenu, index) => {
+    itemMenu.addEventListener('click', () => {
+      activeTab(index)
+    })
+  })
+}
