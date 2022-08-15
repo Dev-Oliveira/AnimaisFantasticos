@@ -11,4 +11,5 @@ initAnimacaoScroll();
 initAccordion();
 initTabNav();
 initModal();
-initToolTip();   
+initToolTip();
+initDropdownMenu();
